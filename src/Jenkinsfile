@@ -1,0 +1,25 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git branch: 'master', url: 'https://github.com/Pablo-Carabajal/prueba-con-Jenkings.git'
+            }
+        }
+        stage('Build') {
+            steps {
+                dir('src') {
+                    sh 'javac HolaMundo.java'
+                }
+            }
+        }
+        stage('Test') {
+            steps {
+                dir('src') {
+                    sh 'java HolaMundo'
+                }
+            }
+        }
+    }
+}
