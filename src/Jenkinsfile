@@ -10,7 +10,7 @@ pipeline {
         stage('Build') {
             steps {
                 dir('src') {
-                    sh 'javac HolaMundo.java'
+                    sh 'javac holaMundo.java'
                 }
             }
         }
