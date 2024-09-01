@@ -10,14 +10,21 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    sh 'javac src/HolaMundo.java'
+                    // Cambia al directorio src
+                    dir('src') {
+                        // Compila el archivo HolaMundo.java
+                        sh 'javac HolaMundo.java'
+                    }
                 }
             }
         }
         stage('Test') {
             steps {
-                dir('src') {
-                    sh 'java HolaMundo'
+                script {
+                    // Ejecuta el archivo HolaMundo.class
+                    dir('src') {
+                        sh 'java HolaMundo'
+                    }
                 }
             }
         }
