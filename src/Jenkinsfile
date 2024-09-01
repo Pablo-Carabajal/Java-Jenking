@@ -9,8 +9,8 @@ pipeline {
         }
         stage('Build') {
             steps {
-                dir('src') {
-                    sh 'java holaMundo.java'
+                scrip {
+                    sh 'src/javac holaMundo.java'
                 }
             }
         }
