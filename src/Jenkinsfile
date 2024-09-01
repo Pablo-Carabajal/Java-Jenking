@@ -9,15 +9,15 @@ pipeline {
         }
         stage('Build') {
             steps {
-                scrip {
-                    sh 'src/javac holaMundo.java'
+                script {
+                    sh 'javac src/HolaMundo.java'
                 }
             }
         }
         stage('Test') {
             steps {
                 dir('src') {
-                    sh 'java holaMundo,como estan!!'
+                    sh 'java HolaMundo'
                 }
             }
         }
